@@ -2,6 +2,7 @@ import { styled } from "@mui/material/styles";
 import { Typography, Button } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import Utils from "../../utils";
+import PageView from "../../components/PageView";
 
 const VisuallyHiddenInput = styled("input")`
   clip: rect(0 0 0 0);
@@ -21,12 +22,7 @@ export default function Questions() {
   };
 
   return (
-    <div
-      style={{
-        height: "100%",
-        width: "100%",
-      }}
-    >
+    <PageView>
       <Typography variant="h5" gutterBottom>
         Upload your question paper
       </Typography>
@@ -47,6 +43,6 @@ export default function Questions() {
           accept=".xlsx, .xls, .csv, .json"
         />
       </Button>
-    </div>
+    </PageView>
   );
 }
