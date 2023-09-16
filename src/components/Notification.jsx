@@ -2,26 +2,18 @@ import * as React from "react";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 
-export default function Notification({ show, message, type, onClose = null }) {
-  const [open, setOpen] = React.useState(true);
-
-  const handleOnClose = () => {
-    setOpen(false);
-    if (onClose !== null) onClose();
-  };
-
+export default function Notification({ show, message, type, onClose }) {
   if (!show) return <></>;
-  
   return (
     <Snackbar
       anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      open={open}
-      autoHideDuration={6000}
-      onClose={handleOnClose}
+      open={show}
+      autoHideDuration={3000}
+      onClose={onClose}
     >
       <Alert
         variant="filled"
-        onClose={handleOnClose}
+        onClose={onClose}
         elevation={6}
         severity={type}
         sx={{ width: "100%" }}

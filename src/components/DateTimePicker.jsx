@@ -8,8 +8,9 @@ export default function DateAndTimePicker({ label, onChange, value }) {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DateTimePicker
+        sx={{ width: "100%" }}
         label={label}
-        onChange={onChange}
+        onAccept={onChange}
         ampm
         format="DD/MM/YYYY hh:mm A"
         defaultValue={dayjs()}
